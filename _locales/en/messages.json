@@ -537,6 +537,12 @@
     "featureOSDTip": {
         "message": "Only for devices with onboard OSD."
     },
+    "featureACC_ALT_HOLD": {
+        "message": "Altitude hold by accelerometer only."
+    },
+    "featureACC_ALT_HOLDTip": {
+        "message": "Currently conflict with BARO mode."
+    },
     
     "configurationFeatureEnabled": {
         "message": "Enabled"
