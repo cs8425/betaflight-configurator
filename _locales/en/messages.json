@@ -457,7 +457,9 @@
     "initialSetupEepromSaved": {
         "message": "EEPROM <span style=\"color: #ffbb00\">saved</span>"
     },
-
+    "featureNone": {
+        "message": "&lt;Select One&gt;"
+    },
     "featureRX_PPM": {
         "message": "PPM RX input"
     },
@@ -827,6 +829,9 @@
     },
     "portsFunction_IRC_TRAMP": {
         "message": "IRC Tramp"
+    },
+    "portsFunction_TELEMETRY_IBUS": {
+        "message": "iBUS Telemetry"
     },
     "pidTuningUpgradeFirmwareToChangePidController": {
         "message": "<span style=\"color: red\">Changing PID controller disabled - you can change it via the CLI.</span>  You have firmware with API version <span style=\"color: red\">$1</span>, but this functionality requires requires <span style=\"color: #ffbb00\">$2</span>."
