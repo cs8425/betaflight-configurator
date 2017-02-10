@@ -124,11 +124,9 @@ if (document.URL.indexOf('file:///android_asset/www/') !== -1) {
 
 		document.addEventListener("deviceready", onDeviceReady, false);
 		document.addEventListener("pause", onDevicePause, false);
-//		document.addEventListener("resume", onDeviceReady, false);
 	}
 
 	$.getScript('cordova.js', function( data, textStatus, jqxhr ) {
-		// console.log( data ); // Data returned
 		console.log( textStatus ); // Success
 		console.log( jqxhr.status ); // 200
 		console.log('cordova was loaded.');

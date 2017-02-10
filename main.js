@@ -1,14 +1,9 @@
 'use strict';
-var mainPage = 0;
-var aaa = [];
 function startMainPage(e, cordovaStart) {
-	aaa.push([cordovaAPI, cordovaStart]);
     // if in cordova, only run when fake API hooked.
     if(cordovaAPI && (typeof cordovaStart === 'undefined')) {
         return;
     }
-	mainPage++;
-	console.log('mainPage inited!!', mainPage, cordovaStart);
 
     // translate to user-selected language
     localize();

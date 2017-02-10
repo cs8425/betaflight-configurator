@@ -1,15 +1,10 @@
 'use strict';
 var mspHelper;
 var mspLiveDataRefreshTime = 100;
-var serialBackend = 0;
-var bbb = [];
 function serialBackendInit(e, cordovaStart) {
-	bbb.push([cordovaAPI, cordovaStart]);
     if(cordovaAPI && (typeof cordovaStart === 'undefined')) {
         return;
     }
-	serialBackend++;
-	console.log('serialBackend inited!!', serialBackend, cordovaStart);
 
     GUI.updateManualPortVisibility = function(){
         var selected_port = $('div#port-picker #port option:selected');
