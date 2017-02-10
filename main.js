@@ -1,6 +1,10 @@
 'use strict';
+function startMainPage(e, cordovaStart) {
+    // if in cordova, only run when fake API hooked.
+    if(cordovaAPI && (typeof cordovaStart === 'undefined')) {
+        return;
+    }
 
-$(document).ready(function () {
     // translate to user-selected language
     localize();
 
@@ -367,7 +371,9 @@ $(document).ready(function () {
             }
         }).change();
     });
-});
+}
+
+$(document).ready(startMainPage);
 
 function notifyOutdatedVersion(version) {
     if (semver.lt(chrome.runtime.getManifest().version, version)) {

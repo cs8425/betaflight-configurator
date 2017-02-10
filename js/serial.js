@@ -27,6 +27,15 @@ var serial = {
     },
     connectSerial: function (path, options, callback) {
         var self = this;
+        var testUrl = path.match(/^tcp:\/\/([A-Za-z0-9\.-]+)(?:\:(\d+))?$/)
+        if (testUrl) {
+            self.connectTcp(testUrl[1], testUrl[2], options, callback);
+        } else {
+            self.connectSerial(path, options, callback);
+        }
+    },
+    connectSerial: function (path, options, callback) {
+        var self = this;
         self.openRequested = true;
         self.connectionType = 'serial';
         self.logHead = 'SERIAL: ';
