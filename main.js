@@ -1,6 +1,15 @@
 'use strict';
+var mainPage = 0;
+var aaa = [];
+function startMainPage(e, cordovaStart) {
+	aaa.push([cordovaAPI, cordovaStart]);
+    // if in cordova, only run when fake API hooked.
+    if(cordovaAPI && (typeof cordovaStart === 'undefined')) {
+        return;
+    }
+	mainPage++;
+	console.log('mainPage inited!!', mainPage, cordovaStart);
 
-$(document).ready(function () {
     // translate to user-selected language
     localize();
 
@@ -367,7 +376,9 @@ $(document).ready(function () {
             }
         }).change();
     });
-});
+}
+
+$(document).ready(startMainPage);
 
 function notifyOutdatedVersion(version) {
     if (semver.lt(chrome.runtime.getManifest().version, version)) {

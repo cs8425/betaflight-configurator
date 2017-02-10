@@ -21,6 +21,8 @@ var MSP = {
     listeners:                  [],
 
     JUMBO_FRAME_SIZE_LIMIT:     255,
+
+    timeout:                    1000,
     
     read: function (readInfo) {
         var data = new Uint8Array(readInfo.data);
@@ -148,6 +150,7 @@ var MSP = {
         this.listeners = [];  
     },
     send_message: function (code, data, callback_sent, callback_msp, callback_onerror) {
+        var self = this;
         var bufferOut,
             bufView;
 
@@ -207,7 +210,7 @@ var MSP = {
                 console.log('MSP data request timed-out: ' + code);
 
                 serial.send(bufferOut, false);
-            }, 1000); // we should be able to define timeout in the future
+            }, self.timeout); // we should be able to define timeout in the future
         }
 
         MSP.callbacks.push(obj);
