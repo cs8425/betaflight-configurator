@@ -54,7 +54,15 @@ TABS.ports.initialize = function (callback, scrollPosition) {
         '57600',
         '115200',
         '230400',
-        '250000'
+        '250000',
+        '400000',
+        '460800',
+        '500000',
+        '921600',
+        '1000000',
+        '1500000',
+        '2000000',
+        '2470000'
     ];
 
     if (semver.gte(CONFIG.flightControllerVersion, "3.1.0")) {
@@ -86,7 +94,15 @@ TABS.ports.initialize = function (callback, scrollPosition) {
         '57600',
         '115200',
         '230400',
-        '250000'
+        '250000',
+        '400000',
+        '460800',
+        '500000',
+        '921600',
+        '1000000',
+        '1500000',
+        '2000000',
+        '2470000'
     ];
 
     var columns = ['configuration', 'peripherals', 'sensors', 'telemetry', 'rx'];
